@@ -1,0 +1,87 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ======================
+# Virtual Environments
+# ======================
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ======================
+# Conda
+# ======================
+.conda/
+conda-meta/
+*.conda
+
+# ======================
+# Build / Distribution
+# ======================
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# ======================
+# Testing / Coverage
+# ======================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ======================
+# Logs
+# ======================
+*.log
+logs/
+
+# ======================
+# Docker
+# ======================
+.dockerignore
+docker-compose.override.yml
+
+# ======================
+# MySQL (local & Docker)
+# ======================
+mysql-data/
+mysql/
+*.sql
+*.dump
+
+# ======================
+# Alembic
+# (Installed but NOT initialized yet)
+# ======================
+alembic.ini
+alembic/versions/
+
+# ======================
+# IDEs / Editors
+# ======================
+.vscode/
+.idea/
+.spyderproject
+.spyproject
+.ropeproject
+
+# ======================
+# OS
+# ======================
+.DS_Store
+Thumbs.db
