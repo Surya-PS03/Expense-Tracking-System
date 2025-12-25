@@ -14,3 +14,10 @@ DB_URL = f'mysql+pymysql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}'
 engine = create_engine(DB_URL,echo = True)
 SessionLocal = sessionmaker(bind = engine, autocommit= False, autoflush = False)
 Base = declarative_base()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

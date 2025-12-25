@@ -17,6 +17,8 @@ class Users(Base):
     # total_earning=0 will cause negative savings issue so using null is viable
     total_earning = Column(Numeric(10,2),CheckConstraint("total_earning>=0",name = "check_earning_positive"),nullable = True) 
 
+    #adding password_hash
+    password_hash = Column(String(255),nullable = False)
     # used cascade to remove dangling refrences to ORM object like expenses when a user is deleted and passive_delete when FK has ondelete="Cascade" for efficiency
     expenses = relationship("Expenses",back_populates = "user",cascade= "all, delete-orphan",passive_deletes=True)
     categories = relationship("Categories",back_populates="user",cascade="all, delete-orphan",passive_deletes = True)

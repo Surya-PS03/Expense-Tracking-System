@@ -5,3 +5,4 @@ dotenv
 pymysql
 alembic
 cryptography
+pydantic[email]

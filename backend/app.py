@@ -1,9 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Depends
 from database import engine,Base
 import models
+from database import get_db
+from sqlalchemy.orm import Session
+from routers.createUser import createUser
 app = FastAPI()
-Base.metadata.create_all(bind = engine)
+
+app.include_router(createUser)
 
 @app.get("/health")
-async def check_health():
-    return {"health_status":"Good"}
+def check_health(db: Session = Depends(get_db)):
+    return {"status":"OKAY"}
