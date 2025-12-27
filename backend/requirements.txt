@@ -6,3 +6,8 @@ pymysql
 alembic
 cryptography
 pydantic[email]
+passlib
+python-jose
+fastapi-security
+argon2-cffi
+python-multipart

@@ -8,7 +8,7 @@ class Users(Base):
     __tablename__ = 'Users'
 
     user_id = Column(Integer,primary_key= True)
-    user_name = Column(String(50),nullable = False)
+    user_name = Column(VARCHAR(50,collation ="utf8mb4_0900_ai_ci"),unique=True,nullable = False) # added unique and case insensitivity to user_name
 
     ##used it because of case issue in mail, standard used only lower case
     email = Column(VARCHAR(255, collation ="utf8mb4_0900_ai_ci"), unique = True, nullable=False)
