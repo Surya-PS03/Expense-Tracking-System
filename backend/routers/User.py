@@ -5,9 +5,9 @@ from schema import CreateUser
 from models import Users
 from routers.security.hashPass import hash_pass
 
-createUser = APIRouter(prefix="/user",tags=["Users"])
+User = APIRouter(prefix="/user",tags=["Users"])
 
-@createUser.post("/")
+@User.post("/")
 async def create_user(new_user: CreateUser,db: Session = Depends(get_db)):
 
     user = db.query(Users).filter(Users.user_name==new_user.user_name).first()
